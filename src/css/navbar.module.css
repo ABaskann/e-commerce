@@ -1,0 +1,15 @@
+.nav{
+    display: flex;    
+    align-items: center;
+    width: 100%;
+}
+.logo{
+    width: 30%;
+    background-color: cornflowerblue;
+}
+.links{
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    background-color: coral;
+}

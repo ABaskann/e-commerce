@@ -1,25 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+
+import HomeLayout from "./components/layouts/HomeLayout";
+import Home from "./components/pages/Home";
+import Electronics from "./components/pages/Electronics";
+import Jewelery from "./components/pages/Jewelry";
+import MenClothing from "./components/pages/MenClothing";
+import WomenClothing from "./components/pages/WomenClothing";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <HomeLayout />,
+      children: [
+        {
+          path: "/",
+          element: <Home />,
+        },
+        {
+          path: "/electronics",
+          element: <Electronics />,
+        },
+        {
+          path: "/jewelry",
+          element: <Jewelery />,
+        },
+        {
+          path: "/men-clothing",
+          element: <MenClothing />,
+        },
+        {
+          path: "/women-clothing",
+          element: <WomenClothing />,
+        },
+      ],
+    },
+  ]);
+  return <RouterProvider router={router} />;
 }
 
 export default App;
