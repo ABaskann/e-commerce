@@ -1,15 +1,25 @@
-.nav{
-    display: flex;    
-    align-items: center;
-    width: 100%;
+.nav {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: fit-content;
+  background-color: black;
 }
-.logo{
-    width: 30%;
-    background-color: cornflowerblue;
+.logo {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.links{
-    display: flex;
-    justify-content: center;
-    width: 70%;
-    background-color: coral;
+.links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  list-style: none;
+}
+.link {
+  text-decoration: none;
+  color: #f7e8a0;
+  padding: 16px;
 }

@@ -1,11 +1,12 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import HomeLayout from "./components/layouts/HomeLayout";
-import Home from "./components/pages/Home";
+import Home, { dataLoader } from "./components/pages/Home";
 import Electronics from "./components/pages/Electronics";
-import Jewelery from "./components/pages/Jewelry";
+import Jewelery, { jeweleryloader } from "./components/pages/Jewelry";
 import MenClothing from "./components/pages/MenClothing";
-import WomenClothing from "./components/pages/WomenClothing";
+import WomenClothing, { womenClothingloader } from "./components/pages/WomenClothing";
+import DetailLayout from "./components/layouts/DetailLayout";
 
 function App() {
   const router = createBrowserRouter([
@@ -16,25 +17,33 @@ function App() {
         {
           path: "/",
           element: <Home />,
+          loader:dataLoader
         },
         {
-          path: "/electronics",
+          path: "electronics",
           element: <Electronics />,
         },
         {
-          path: "/jewelry",
+          path: "jewelry",
           element: <Jewelery />,
+          loader:jeweleryloader
         },
         {
-          path: "/men-clothing",
+          path: "men-clothing",
           element: <MenClothing />,
         },
         {
-          path: "/women-clothing",
+          path: "women-clothing",
           element: <WomenClothing />,
-        },
+          loader:womenClothingloader
+        },       
       ],
+       
     },
+    {
+      path:"product/:product_id",
+      element:<DetailLayout/>
+    }
   ]);
   return <RouterProvider router={router} />;
 }
