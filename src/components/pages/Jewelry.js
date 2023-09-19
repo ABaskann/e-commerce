@@ -1,11 +1,29 @@
 import React from "react";
-import { useLoaderData } from "react-router-dom";
+import { useQuery } from "react-query";
+
+
+
+const fetchJewelryData = async () => {
+  const response = await fetch('https://fakestoreapi.com/products/category/jewelery');
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
+  return response.json();
+};
 
 function Jewelry() {
-  const datas = useLoaderData();
+  const { data, error, isLoading } = useQuery("jewelryData", fetchJewelryData);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
   return (
     <>
-      {datas.map((data, index) => {
+      {data.map((data, index) => {
         return <p key={index}>{data.title}</p>;
       })}
     </>
@@ -13,14 +31,3 @@ function Jewelry() {
 }
 
 export default Jewelry;
-export const jeweleryloader = () => {
-  return fetch('https://fakestoreapi.com/products/category/jewelery')
-    .then((res) => res.json())
-    .then((data) => {
-      return data;
-    })
-    .catch((error) => {
-      console.error('Hata:', error);
-    });
-};
-

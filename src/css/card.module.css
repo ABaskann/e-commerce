@@ -10,7 +10,7 @@
 .card {
   border: 2px solid #f7e8a0;
   padding: 8px;
-  text-align: center;
+  
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -20,7 +20,7 @@
   color: azure;
 }
 .image_container {
-  height: 80%;
+  height: 70%;
 }
 .image {
   width: 100%;
@@ -40,21 +40,97 @@
   text-overflow: ellipsis;
   width: 100%;
   padding-top: 8px;
-  
-  
+  text-align: center;
+  animation: myAnim 2s ease 0s 1 normal forwards;
 }
 .category {
   text-transform: capitalize;
-  padding-top: 8px;
+  padding: 8px;
+  background-color: #f7e8a0;
+  border: 1px solid #f5cd07;
+  width: fit-content;
+  border-radius: 8px;
+  margin: 8px auto;
+  animation: myAnim 2s ease 0s 1 normal forwards;
 }
 .card:hover .image_container {
   height: 60%;
+
+  width: 50%;
+  margin: 0 auto;
 }
 .button {
+  display: none;
   background-color: #f7e8a0;
   border-radius: 16px;
   text-align: center;
   padding: 8px;
   border: none;
-  margin-top: 8px;
+  margin-top: 16px;
+}
+.price{
+  display: none;
+  color: black;
+  text-align: center;
+}
+.card:hover .info_container{
+  display: none;
+}
+.card:hover .button{
+  display: block;
+  margin: 0 auto;
+  animation: myAnim2 2s ease 0s 1 normal forwards;
+}
+.card:hover .price{
+  display: block;
+  margin-top: 16px;
+  animation: myAnim2 2s ease 0s 1 normal forwards;
+}
+.sizes{
+  display: none;
+  justify-content: center;
+  align-items: center;
+  margin: 16px;
+}
+.size{
+  padding: 8px;
+  background-color: #f7e8a0;
+  border: #f5cd07;
+  margin: 4px;
+  border-radius: 4px;
+}
+.size:hover{
+  padding: 8px;
+  border: #f7e8a0;
+  background-color: #f5cd07;
+  margin: 4px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.card:hover .sizes{
+  display: flex;
+  animation: myAnim2 2s ease 0s 1 normal forwards;
+  
+}
+@keyframes myAnim {
+	0% {
+		opacity: 0;
+		transform: translateY(-50%);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+@keyframes myAnim2 {
+	0% {
+		opacity: 0;
+		transform: translateY(50%);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }

@@ -20,6 +20,13 @@ function Home() {
             <div className={styles.image_container}>
               <img className={styles.image} src={data.image} alt="Product" />
             </div>
+            <p className={styles.price}>{data.price}$</p>            
+            <div className={styles.sizes}>
+              <button className={styles.size}>S</button>
+              <button className={styles.size}>M</button>
+              <button className={styles.size}>L</button>
+              <button className={styles.size}>XL</button>
+            </div>
             <button className={styles.button}>Add Cart</button>
           </Link>
         );

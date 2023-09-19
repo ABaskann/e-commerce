@@ -3,9 +3,9 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import HomeLayout from "./components/layouts/HomeLayout";
 import Home, { dataLoader } from "./components/pages/Home";
 import Electronics from "./components/pages/Electronics";
-import Jewelery, { jeweleryloader } from "./components/pages/Jewelry";
+import Jewelery from "./components/pages/Jewelry";
 import MenClothing from "./components/pages/MenClothing";
-import WomenClothing, { womenClothingloader } from "./components/pages/WomenClothing";
+import WomenClothing from "./components/pages/WomenClothing";
 import DetailLayout from "./components/layouts/DetailLayout";
 
 function App() {
@@ -26,7 +26,7 @@ function App() {
         {
           path: "jewelry",
           element: <Jewelery />,
-          loader:jeweleryloader
+          
         },
         {
           path: "men-clothing",
@@ -35,7 +35,7 @@ function App() {
         {
           path: "women-clothing",
           element: <WomenClothing />,
-          loader:womenClothingloader
+          
         },       
       ],
        
